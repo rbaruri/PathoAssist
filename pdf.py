@@ -81,8 +81,11 @@ if 'conversation' not in st.session_state:
     st.session_state.conversation = []
 
 # LLM integration
-api_key = os.getenv("GROQ_API_KEY")
+api_key = st.secrets["api"]["GROQ_API_KEY"]
+
+# Initialize your client
 client = Groq(api_key=api_key)
+
 
 # api_key = st.secrets["api"]["key"]
 # client = Groq(api_key=api_key)
